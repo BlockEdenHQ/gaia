@@ -78,3 +78,5 @@ config.json
 deploy/configs/nginx/conf.d/gaia.conf
 deploy/docker/*.env
 !deploy/docker/sample*.env
+
+.idea/

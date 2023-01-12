@@ -1,3 +1,49 @@
+# BlockEden.xyz dStore's fork of Gaia
+
+The project goal is to add ethstorage driver to gaia.
+
+https://github.com/ethstorage/ethfs-uploader
+
+
+## Work with local disk
+
+Add config.json to ./hub/
+
+```json
+{
+  "port": 3876,
+  "driver": "disk",
+  "readURL": "https://this-won-t-work-with-local-disk-driver",
+
+  "diskSettings": {
+    "storageRootDirectory":"/Users/TODO/projects/gaia/data"
+  },
+
+  "argsTransport": {
+    "level": "debug",
+    "handleExceptions": true,
+    "timestamp": true,
+    "colorize": true,
+    "json": false
+  }
+}
+```
+
+and then run the hub
+
+```bash
+CONFIG_PATH=/Users/TODO/projects/gaia/hub/config.json yarn start
+```
+
+Finally, run the test
+
+```bash
+node ./deploy/gaia_test.js http://localhost:3876
+```
+
+
+-------------------------------------------------------
+
 Gaia: A decentralized high-performance storage system
 ====================================
 
